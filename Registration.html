@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <!-- <div class="container">-->
+        <link rel="stylesheet" href="bootstrap.css">
+        <style>.cust-text-rounded{border-radius:50px}</style>
+       <script>
+           function unameValid()
+           {
+            var nam=document.getElementById('uname').value;
+               var a=/[A-Za-z0-9]{6,14}/;
+               if(nam.match(a))
+               {
+                document.getElementById('name').innerHTML="Valid name";
+                document.getElementById('name').style.color="green";
+               }
+               else
+               {
+                document.getElementById('name').innerHTML="Invalid name";
+                document.getElementById('name').style.color="red";
+               }
+           }
+           function valid()
+           {
+               var name1=document.getElementById('name11').value;
+               if(name1.length>8)
+               {
+                document.getElementById('nameVal').innerHTML="Strong";
+                document.getElementById('nameVal').style.color="green";
+               }
+               else
+               {
+                document.getElementById('nameVal').innerHTML="Weak";
+                document.getElementById('nameVal').style.color="red";
+               }
+           }
+           function mailValid()
+           {
+               var email=document.getElementById('mail11').value;
+               var b=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+               if(email.match(b))
+               {
+                document.getElementById('mailVal').innerHTML="Valid mail id";
+                document.getElementById('mailVal').style.color="green";
+               }
+               else
+               {
+                document.getElementById('mailVal').innerHTML="Enter valid mail id";
+                document.getElementById('mailVal').style.color="red";
+               }
+
+           }
+           function passValid()
+           {
+               var pass1=document.getElementById('pass').value;
+               if(pass1.length>8)
+               {
+                document.getElementById('passVal').innerHTML="Strong password";
+                document.getElementById('passVal').style.color="green";
+               }
+               else
+               {
+                document.getElementById('passVal').innerHTML="Weak password";
+                document.getElementById('passVal').style.color="red";
+               }
+           }
+           function confPass()
+           {
+               var password1=document.getElementById('pass').value;
+               var password2=document.getElementById('rpass').value;
+               if(password1==password2)
+               {
+                   document.getElementById('confPassword').innerHTML="Password Correct";
+                   document.getElementById('confPassword').style.color="green";
+               }
+               else{
+                document.getElementById('confPassword').innerHTML="Password Incorrect";
+                document.getElementById('confPassword').style.color="red";
+               }
+           }
+           function mobile()
+           {
+               var number=document.getElementById('mob').value;
+               var c=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+               if(number.match(c))
+               {
+                   document.getElementById('mobNumber').innerHTML="Contact number is valid";
+                   document.getElementById('mobNumber').style.color="green";
+               }
+               else
+               {
+                   document.getElementById('mobNumber').innerHTML="Invalid contact number";
+                   document.getElementById('mobNumber').style.color="red";
+               }
+           }
+         
+       </script>
+       
+    </head>
+    <body>
+        
+        <tbody>
+        <center>
+        <form name="form1" action="C:\Users\heravich\Desktop\Bootstrap CSS\Login.html">
+        <div class="form-group">
+            <div class="col-sm-8">
+        <table class="table table-dark table-striped table-hover table-bordered ">
+            <h1>Registration Page</h1>
+            <tr class="cust-text-rounded">
+                <td>User Name</td>
+                <td><input type="text" placeholder="Enter username" name="name" id="uname" onkeyup="unameValid()" class="form-control mb-2" style="border-radius:10px"></td>
+                <td><p id="name"></p></td>
+            </tr>
+            <tr>
+                    <td>Name</td>
+                    <td><input type="text" placeholder="Enter name" name="name" id="name11" onkeyup="valid()" class="form-control mb-2" style="border-radius: 10px"></td>
+                    <td><p id="nameVal"></p></td>
+                   
+            </tr>
+             <tr>
+                 <td>Email</td>
+                 <td><input type="text" placeholder="Enter mailid" name="mail" id="mail11" onkeyup="mailValid()" class="form-control mb-2" style="border-radius: 10px"></td>
+                 <td><p id="mailVal"></p></td>
+            </tr> 
+            <tr>
+                <td>Password</td>
+                <td><input type="Password" placeholder="Enter Password" name="pass" id="pass" onkeyup="passValid()" class="form-control mb-2" style="border-radius: 10px"></td>
+                <td><p id="passVal"></p></td>
+            </tr>
+            <tr>
+                <td>Repeat Password</td>
+                <td><input type="Password" placeholder="Confirm Password" name="pass" id="rpass" onkeyup="confPass()" class="form-control mb-2" style="border-radius: 10px"></td>
+                <td><p id="confPassword"></p></td>
+            </tr>
+            <tr>
+                 <td>DOB</td>
+                 <td><input type="date" placeholder="mm/dd/yyyy" name="date"></td>
+            </tr>
+                           
+            <tr>
+                 <td>Gender</td>
+                 <td>
+                Male<input type="radio" name="gender" value="Male" class="form-control">
+                Female<input type="radio" name="gender" value="Female" class="form-control">
+                Other<input type="radio" name="gender" value="Other" class="form-control"></td>
+            </tr>
+            <tr>
+                 <td>Language Known</td>
+                 <td>
+                English<input type="checkbox" name="text" value="English" class="form-control">
+                Hindi<input type="checkbox" name="text" value="Hindi" class="form-control">
+                Tamil<input type="checkbox" name="text" value="Tamil" class="form-control">
+                Telugu<input type="checkbox" name="text" value="Telugu" class="form-control"></td>
+          </tr>
+        <tr>
+                <td>Contact Number</td>
+                <td><input type="text" placeholder="Phone number" name="date" id="mob" onkeyup="mobile()" class="form-control mb-2" style="border-radius: 10px"></td>
+                <td><p id="mobNumber"></p></td>
+        </tr>
+        <tr>
+                <td>Upload</td>
+                <td><input type="file" placeholder="Choose the file" name="text"></td>
+        </tr>
+        <tr>
+                <td>Favourite Color</td>
+                <td><input type="color" name="color"></td>
+        </tr>
+        <tr>
+                <td>Download File</td>
+                <td>
+                    <button class="btn btn-warning"><a href="https://www.google.com" download>Download File</a></button>
+                </td>
+        </tr>
+        <tr>
+                <td>Qualification</td>
+                <td>
+                    <select>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Degree</button>
+                    <option>Degree</option>
+                    <option>B.TECH</option>
+                    <option>MBA</option>
+                </select></td>       
+        </tr>
+        <tr>
+                <td>
+                    <div class="btn btn-group"></div>
+              <button type=="submit"  name="text" class="btn btn-success" value="Register">Register</button>
+              <button type="reset" class="btn btn-danger" value="Clear">Clear</button>
+              <button type="button" class="btn btn-info" value="Download">Download</td>
+              </div>
+        </tr>
+        
+                                    
+        </table>
+        </div>
+        </div>
+    </form>
+</center>
+</tbody>
+    </body>
+</html>
